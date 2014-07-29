@@ -1,0 +1,44 @@
+one:
+  name: Electric Guitar Strings
+  price: 9.99
+  type_id: 1
+
+two:
+  name: Vintage V2 Blonde Electric Guitar
+  price: 189.99
+  type_id: 9
+
+three:
+  name: Tanglewood Bass Guitar
+  price: 370
+  type_id: 10
+
+four:
+  name: Lanakai Ukulele
+  price: 44.99
+  type_id: 14
+
+five:
+  name: Great Big Pearl Drum
+  price: 229.99
+  type_id: 4
+
+six:
+  name: Bouzouki Mandolin
+  price: 199.99
+  type_id: 19
+
+seven:
+  name: Very Nice Golden-Coloured Flute
+  price: 79.49
+  type_id: 5
+
+eight:
+  name: Alto 400W Power Amp
+  price: 79.00
+  type_id: 6
+
+nine:
+  name: How to Play Good Music
+  price: 11.99
+  type_id: 7

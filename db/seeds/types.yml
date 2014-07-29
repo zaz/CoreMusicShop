@@ -1,0 +1,22 @@
+- name: accessories
+- name: guitars & ukuleles
+- name: folk instruments
+- name: percussion
+- name: other
+- name: amps & equipment
+- name: books
+- {name: violin, parent_id: 3}
+- {name: electric guitar, parent_id: 2}
+- {name: bass guitar, parent_id: 2}
+- {name: acoustic guitar, parent_id: 2}
+- {name: classical guitar, parent_id: 2}
+- {name: ukulele, parent_id: 2}
+- {name: viola, parent_id: 8}
+- {name: violin, parent_id: 8}
+- {name: cello, parent_id: 8}
+- {name: double bass, parent_id: 8}
+- {name: banjo, parent_id: 3}
+- {name: mandolin, parent_id: 3}
+- {name: harmonica, parent_id: 5}
+- {name: keyboard, parent_id: 5}
+- {name: woodwind, parent_id: 5}

@@ -1,0 +1,38 @@
+%h1 Products
+
+%table
+  %tr
+    %th
+    %th
+    %th
+    %th
+    %th
+
+  - @products.each do |product|
+    - typecode = h product.type.name if product.type
+    %tr{class: 'product', 'data-type' => typecode}
+      %td= product.name
+      %td= "£#{product.price}"
+      %td= link_to 'Show', product
+      %td= link_to 'Edit', edit_product_path(product)
+      %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_product_path
+
+%hr
+
+%table
+  %tr
+    %th Categories
+    -# %th
+    -# %th
+
+  - @types.each do |type|
+    %tr
+      -# TODO: Make link relative to products page
+      %td= link_to( type.name, '/type/' + type.name.gsub(' ', '_') )
+      -# %td= link_to 'Show', type
+      -# %td= link_to 'Edit', edit_type_path(type)
+      -# %td= link_to 'Destroy', type, :method => :delete, :data => { :confirm => 'Are you sure?' }
