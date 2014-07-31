@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724163856) do
+ActiveRecord::Schema.define(version: 20140730182812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands", force: true do |t|
+    t.string   "name",       limit: 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "brands", ["name"], name: "index_brands_on_name", unique: true, using: :btree
 
   create_table "products", force: true do |t|
     t.string   "name",       limit: 50
@@ -22,8 +30,12 @@ ActiveRecord::Schema.define(version: 20140724163856) do
     t.integer  "type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brand_id"
+    t.integer  "quantity"
+    t.integer  "barcode"
   end
 
+  add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
   add_index "products", ["type_id"], name: "index_products_on_type_id", using: :btree
 
   create_table "types", force: true do |t|

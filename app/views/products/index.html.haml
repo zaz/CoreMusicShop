@@ -7,12 +7,18 @@
     %th
     %th
     %th
+    %th
+    %th
 
   - @products.each do |product|
     - typecode = h product.type.name if product.type
+    - qty_style = "color: red" if product.quantity and product.quantity < 0
+    - qty_style = "color: blue;font-weight:bold" if product.quantity and product.quantity > 0
     %tr{class: 'product', 'data-type' => typecode}
+      %td= product.brand.name if product.brand
       %td= product.name
       %td= "£#{'%.2f' % product.price}" if product.price
+      %td{style: qty_style}= "(#{product.quantity})" if product.quantity
       %td= link_to 'Show', product
       %td= link_to 'Edit', edit_product_path(product)
       %td= link_to 'Delete', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
