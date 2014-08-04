@@ -1,0 +1,109 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Home Page - Core Music - Hexham based community music shop
+    %meta{:content => "Core Music is a music shop and community music facility located in Hexham, Northumberland.", :name => "”description”"}/
+    %meta{:content => "width=device-width", :name => "viewport"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      .ui-header
+      %ul.ui-navigation
+        %li
+          %a{:href => "http://coremusic.hyperturtle.uk/"} Home
+        %li
+          %a{:href => "http://coremusic.hyperturtle.uk/about"} About Us
+        %li
+          %a{:href => "http://shop.coremusic.hyperturtle.uk"} Store
+        %li
+          %a{:href => "http://coremusic.hyperturtle.uk/activities"} Activities
+        %li
+          %a{:href => "http://coremusic.hyperturtle.uk/facilities"} Facilities
+        %li
+          %a{:href => "http://coremusic.hyperturtle.uk/news"} News
+        %li
+          %a{:href => "http://coremusic.hyperturtle.uk/contact"} Contact
+      .ui-main
+        = yield
+      .ui-footer
+        .footer-links
+          %ul
+            %li.footer-title
+              MAIN PAGES
+            %li
+              %a{:href => "/"} HOME
+            %li
+              %a{:href => "/about"} ABOUT
+            %li
+              %a{:href => "/contact"} CONTACT
+            %li
+              %a{:href => "/store"} STORE
+            %li
+              %a{:href => "/news"} NEWS
+          %ul
+            %li.footer-title
+              ACTIVITIES
+            %li
+              %a{:href => "/clubs"} CLUBS
+            %li
+              %a{:href => "/lessons"} LESSONS
+            %li
+              %a{:href => "/workshops"} WORKSHOPS
+            %li
+              %a{:href => "/events"} EVENTS
+          %ul
+            %li.footer-title
+              FACILITIES
+            %li
+              %a{:href => "/rehearsalspace"} REHEARSAL SPACE
+            %li
+              %a{:href => "/communalspace"} COMMUNAL SPACE
+            %li
+              %a{:href => "/roomhire"} ROOM HIRE
+            %li
+              %a{:href => "/studio"} STUDIO
+          .clear-fix
+          %span.copyright &copy; 2014 - Core Music
+        .footer-details
+          %ul
+            %li
+              Core Music CIC
+            %li
+              01434 601993
+            %li
+              %a{:href => "mailto:info@coremusic.co.uk"}
+                info@coremusic.co.uk
+            %li
+              14 A/B Gilesgate
+            %li
+              Hexham
+            %li
+              Northumberland
+            %li
+              NE46 3NJ
+        .footer-social
+          %a{:href => "http://www.facebook.com/Core.Music.CIC"}
+            = image_tag("facebook.png")
+          %a{:href => "http://www.twitter.com/coremusichexham"}
+            = image_tag("twitter.png")
+          %a{:href => "http://www.youtube.com/user/Coremusiccic"}
+            = image_tag("youtube.png", alt: "YouTube")
+        .clear-fix
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
+    :javascript
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+              (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-43078772-3');
+      ga('send', 'pageview');
+    %script{"data-no-instant" => "", :src => "//cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.js"}
+    %script{"data-no-instant" => ""} InstantClick.init();
