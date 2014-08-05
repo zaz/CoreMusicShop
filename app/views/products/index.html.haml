@@ -11,11 +11,11 @@
     %th
 
   - @products.each do |product|
-    - typecode = h product.type.name if product.type
+    - typecode = h @type_by_id[product.type_id] if product.type_id
     - qty_style = "color: red" if product.quantity and product.quantity < 0
     - qty_style = "color: blue;font-weight:bold" if product.quantity and product.quantity > 0
-    %tr{class: 'product', 'data-type' => typecode}
-      %td= product.brand.name if product.brand
+    %tr{:'data-type' => typecode}
+      %td= @brand_by_id[product.brand_id] if product.brand_id
       %td= product.name
       %td= "£#{'%.2f' % product.price}" if product.price
       %td{style: qty_style}= "(#{product.quantity})" if product.quantity

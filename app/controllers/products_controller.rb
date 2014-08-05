@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   def index
-    @types = Type.where(parent_id: nil)
+    @types = Type.select('id, name, parent_id')
+    @type_by_id = Hash[@types.collect { |t| [ t.id, t.name ] }]
+    brands = Brand.select('id, name')
+    @brand_by_id = Hash[brands.collect { |b| [ b.id, b.name ] }]
     if params[:type].blank?
       @products = Product.all
     else
@@ -8,14 +11,16 @@ class ProductsController < ApplicationController
 
       current = nil
       for type in type_path
-        current = Type.where(parent_id: current, name: type).ids.first
+        current = @types.select do |t|
+          t.parent_id == current and t.name == type
+        end.map(&:id).first
       end
       return @products = [] if current.nil?
 
       applicable_types = [ [ current ] ]
       until applicable_types.last.empty? do
         applicable_types << applicable_types.last.map do | a_type |
-          Type.where(parent_id: a_type).ids
+          @types.select { |t| t.parent_id == a_type }.map(&:id)
         end .flatten
       end
       applicable_types.flatten!
