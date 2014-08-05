@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rails/rails-observers.git
+  revision: 47323d668cf5dea9e0b0bb9ea780d112400e3a5b
+  specs:
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -134,6 +141,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.1.4)
+  rails-observers!
   rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

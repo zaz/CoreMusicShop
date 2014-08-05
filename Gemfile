@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'actionpack-page_caching'
+gem 'rails-observers', git: 'https://github.com/rails/rails-observers.git'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
