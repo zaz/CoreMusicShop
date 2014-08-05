@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  caches_page :index
+
   def index
     @types = Type.select('id, name, parent_id')
     @type_by_id = Hash[@types.collect { |t| [ t.id, t.name ] }]
