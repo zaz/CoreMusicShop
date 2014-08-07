@@ -9,3 +9,5 @@
 seed_file = File.join(Rails.root, 'db', 'seeds', 'types.yml')
 config = YAML::load_file(seed_file)
 Type.create!(config)
+
+require 'add_products_from_csvs'
