@@ -21,5 +21,13 @@ module CoreMusicShop
     # config.i18n.default_locale = :de
 
     config.active_record.observers = :index_sweeper
+
+    config.lograge.enabled = true
+    config.lograge.formatter = ->(data) {
+      "%s %s %s %s#%s %sms (%s+%s) %s" % [
+        data[:method], data[:path], data[:format], data[:controller],
+        data[:action], data[:duration], data[:view], data[:db], data[:status]
+      ]
+    }
   end
 end
