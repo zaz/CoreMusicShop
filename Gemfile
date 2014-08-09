@@ -25,5 +25,6 @@ group :production do
 end
 
 group :development do
+  gem 'jazz_hands'
   gem 'spring'
 end
