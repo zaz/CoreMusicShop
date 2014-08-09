@@ -6,8 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-seed_file = File.join(Rails.root, 'db', 'seeds', 'types.yml')
-config = YAML::load_file(seed_file)
-Type.create!(config)
+types_file = File.open Rails.root.join('db', 'seeds', 'types')
+for line in types_file
+  code, name = line.strip.split(': ')
+  Type.create!(code: code, name: name) if code and name
+end
 
 require 'add_products_from_csvs'

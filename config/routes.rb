@@ -56,6 +56,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get '/type/*type', to: 'products#index'
+  get '/!*type', to: 'products#index'
   resources :products, path: ''
 end

@@ -1,5 +1,15 @@
 %h1 Products
 
+%ul{id: 'types'}
+  - @types.select { |t| t.code.length == 1 }.each do |type|
+    -# TODO: Make link relative to products page
+    %li= link_to( type.name, '/!' + type.code )
+    %ul
+      - @types.select { |t| t.code.length == 2 and t.code.start_with? type.code }.each do |subtype|
+        %li= link_to( subtype.name, '/!' + subtype.code )
+
+%hr
+
 %table
   %tr
     %th
@@ -26,19 +36,3 @@
 %br
 
 = link_to 'New Product', new_product_path
-
-%hr
-
-%table
-  %tr
-    %th Categories
-    -# %th
-    -# %th
-
-  - @types.each do |type|
-    %tr
-      -# TODO: Make link relative to products page
-      %td= link_to( type.name, '/type/' + type.name.gsub(' ', '_') )
-      -# %td= link_to 'Show', type
-      -# %td= link_to 'Edit', edit_type_path(type)
-      -# %td= link_to 'Destroy', type, :method => :delete, :data => { :confirm => 'Are you sure?' }

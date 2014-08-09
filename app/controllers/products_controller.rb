@@ -2,32 +2,18 @@ class ProductsController < ApplicationController
   caches_page :index
 
   def index
-    @types = Type.select('id, name, parent_id')
+    @types = Type.all
     @type_by_id = Hash[@types.collect { |t| [ t.id, t.name ] }]
     brands = Brand.select('id, name')
     @brand_by_id = Hash[brands.collect { |b| [ b.id, b.name ] }]
     if params[:type].blank?
       @products = Product.all
     else
-      type_path = ( CGI.unescape params[:type].gsub('_', ' ') ).split('/')
+      applicable_types = @types.select do |t|
+        t.code.start_with? params[:type]
+      end.map(&:id)
 
-      current = nil
-      for type in type_path
-        current = @types.select do |t|
-          t.parent_id == current and t.name == type
-        end.map(&:id).first
-      end
-      return @products = [] if current.nil?
-
-      applicable_types = [ [ current ] ]
-      until applicable_types.last.empty? do
-        applicable_types << applicable_types.last.map do | a_type |
-          @types.select { |t| t.parent_id == a_type }.map(&:id)
-        end .flatten
-      end
-      applicable_types.flatten!
-
-      @products = Product.select { |p| applicable_types.include? p.type_id }
+      @products = Product.where(type_id: applicable_types)
     end
   end
 

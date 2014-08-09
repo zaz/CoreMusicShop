@@ -1,0 +1,24 @@
+a: accessories
+g: guitars_and_ukuleles
+	ge: electric_guitar
+	gb: bass_guitar
+	ga: acoustic_guitar
+	gc: classical_guitar
+	gu: ukulele
+f: folk_instruments
+	fv: violin_family
+		fva: viola
+		fvi: violin
+		fvc: cello
+		fvb: double_bass
+	fb: banjo
+	fm: mandolin
+p: percussion
+o: other
+	oh: harmonica
+	ok: keyboard
+	ow: woodwind
+	ob: brass
+e: amps_and_equipment
+b: books
+i: gifts

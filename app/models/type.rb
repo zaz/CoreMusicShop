@@ -1,6 +1,5 @@
 class Type < ActiveRecord::Base
-  belongs_to :parent, class_name: :type
-  has_many :children, class_name: :type
+  has_many :products
 
   before_save :underscores_to_spaces!
 
