@@ -1,3 +1,40 @@
+#types, #types ul {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  text-align: justify;
+}
+#types:after, #types ul:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+#types li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 3em 0;
+}
+#types a {
+  padding: 2em;
+  margin: 0;
+}
+#types {
+  height: 5.6em;
+  padding: 1.2em 0;
+}
+#types ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  margin: 2.8em 0 0;
+  padding: 0.8em 0 0;
+}
+#types li:hover > ul, #types ul:hover {
+  display: inline-block;
+}
+
 #notice {
   color: green;
 }

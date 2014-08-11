@@ -1,12 +1,13 @@
-%h1 Products
-
+-# %div
+  = link_to("All Items", "/")
 %ul{id: 'types'}
   - @types.select { |t| t.code.length == 1 }.each do |type|
     -# TODO: Make link relative to products page
-    %li= link_to( type.name, '/!' + type.code )
-    %ul
-      - @types.select { |t| t.code.length == 2 and t.code.start_with? type.code }.each do |subtype|
-        %li= link_to( subtype.name, '/!' + subtype.code )
+    %li
+      = link_to(*type.link)
+      %ul
+        - @types.select { |t| t.code.length == 2 and t.code.start_with? type.code }.each do |subtype|
+          %li= link_to(*subtype.link)
 
 %hr
 
