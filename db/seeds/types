@@ -1,24 +1,38 @@
-a: accessories
 g: guitars_and_ukuleles
 	ge: electric_guitar
 	gb: bass_guitar
 	ga: acoustic_guitar
 	gc: classical_guitar
 	gu: ukulele
-f: folk_instruments
-	fv: violin_family
-		fva: viola
-		fvi: violin
-		fvc: cello
-		fvb: double_bass
-	fb: banjo
-	fm: mandolin
 p: percussion
-o: other
-	oh: harmonica
-	ok: keyboard
-	ow: woodwind
-	ob: brass
+	pk: drum_kit_pieces
+	ps: drumsticks
+	pd: drums
+	po: other_percussion
+i: other_instruments
+	iv: violin_family
+		iva: viola
+		ivi: violin
+		ivc: cello
+		ivd: double_bass
+	im: mandolin
+	ih: harmonica
+	ik: keyboard
+	io: rarer_instruments
+		ioj: banjo
+		iow: woodwind
+		iob: brass
 e: amps_and_equipment
-b: books
-i: gifts
+	ea: amps
+	em: mixers
+	eo: other_equipment
+a: accessories
+	as: strings
+	ac: cases
+	ap: picks
+	ar: reeds
+	ao: other_accessories
+o: other
+	ob: books
+	oi: gifts
+	oo: everything_else
