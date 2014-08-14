@@ -20,6 +20,7 @@ module CoreMusicShop
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.cache_store = :file_store, Rails.root.join('tmp', 'cache', 'pages')
     config.active_record.observers = :index_sweeper
 
     config.lograge.enabled = true
