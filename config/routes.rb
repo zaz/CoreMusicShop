@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :brands
-
+  resources :products, path: 'items', except: :index
   get '/!*type', to: 'products#index'
-  resources :products, path: ''
+  get '/', to: 'products#index'
 end
