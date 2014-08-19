@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.1.4'
 gem 'pg'  # PostgreSQL
 gem 'sass-rails', '~> 4.0.3'
-gem 'haml-rails'
+gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'  # minify JavaScript
 gem 'coffee-rails', '~> 4.0.0'
 
