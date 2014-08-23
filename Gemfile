@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'actionpack-page_caching'
 gem 'rails-observers', git: 'https://github.com/rails/rails-observers.git'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', github: 'jb/activeadmin'
 gem 'devise', '~> 3.2'
 
 gem 'lograge'
