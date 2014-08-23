@@ -1,0 +1,12 @@
+#index_table_products {
+  .col {
+    text-align: right;
+  }
+  .col-name {
+    text-align: left;
+  }
+  .col:nth-child(3) {
+    text-align: left;
+    font: 110% Consolas, Monaco, monospace;
+  }
+}
