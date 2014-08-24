@@ -22,8 +22,8 @@ ActiveAdmin.setup do |config|
   # config.favicon = '/assets/favicon.ico'
   # config.breadcrumb = false
 
-  # config.register_stylesheet 'my_stylesheet.css'
-  # config.register_javascript 'my_javascript.js'
+  config.register_stylesheet '//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css'
+  config.register_javascript '//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js'
 
   # config.default_per_page = 30
   # config.filters = true
