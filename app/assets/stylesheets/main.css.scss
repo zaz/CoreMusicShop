@@ -1,3 +1,15 @@
+#products a {
+  display: block;
+  width: 222px;
+  height: 80px;
+  float: left;
+  margin: 6px;
+
+  span {
+    margin: 10px;
+  }
+}
+
 #types, #types ul {
   overflow: hidden;
   padding: 0;

@@ -11,28 +11,20 @@ ul id='types'
 
 hr
 
-table
-  tr
-    th
-    th
-    th
-    th
-    th
-    th
-    th
-
+#products
   - @products.each do |product|
     - typecode = h @type_by_id[product.type_id] if product.type_id
-    - qty_style = "color: red" if product.quantity and product.quantity < 0
-    - qty_style = "color: blue;font-weight:bold" if product.quantity and product.quantity > 0
-    tr data-type='typecode'
-      td= @brand_by_id[product.brand_id] if product.brand_id
-      td= product.name
-      td= "£%.2f" % product.price if product.price
-      td style=qty_style = "(#{product.quantity})" if product.quantity
-      td= link_to 'Show', product
-      td= link_to 'Edit', edit_product_path(product)
-      td= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }
+    = link_to product, id: "p#{product.id}", :'data-type' => "#{typecode}" do
+      span
+        => @brand_by_id[product.brand_id] if product.brand_id
+        = product.name
+      span= "£%.2f" % product.price if product.price
+      - if product.quantity
+        - if product.quantity > 0
+          small= "#{product.quantity} available."
+        - else
+          small Out of stock.
+
 
 br
 
