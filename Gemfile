@@ -30,4 +30,5 @@ end
 group :development do
   gem 'jazz_hands'
   gem 'spring'
+  gem 'simple_xlsx_reader'
 end

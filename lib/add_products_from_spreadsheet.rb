@@ -1,12 +1,15 @@
-require 'csv'
+require 'simple_xlsx_reader'
 
-names = %w{Accessories Brass Drums_and_Percussion Equipment Folk_ Gifts Guitars Harmonicas Keyboards Misc Second_Hand Ukuleles Woodwind}
+names = ['Accessories', 'Brass', 'Drums and Percussion', 'Equipment', 'Folk', 'Gifts', 'Guitars', 'Harmonicas', 'Keyboards', 'Misc', 'Second Hand', 'Ukuleles', 'Woodwind']
 types = ['a', 'iob', 'p', 'e', 'i', 'oi', 'g', 'ih', 'ik', 'o', nil, 'gu', 'iow']
 
+file = File.join('db', 'seeds', 'stock.xlsx')
+doc = SimpleXlsxReader.open(file)
+
 types.zip(names).each do |type, name|
-  file = File.join('..', 'stock', "#{name}.csv.ascii")
-  puts file
-  CSV.open(file).drop(1).each do |row|
+  sheet = doc.sheets.drop(1).detect{|s| s.name.strip == name}
+  puts "#{sheet.name}:"
+  sheet.rows.drop(1).each do |row|
     next if row[4].nil?
     type_id = Type.find_by(code: type).id if type
     puts "  #{row[3]}   #{row[4].truncate(50)}  £#{row[5]}  (!#{type})   Qty: #{row[8]}"

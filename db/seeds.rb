@@ -12,4 +12,4 @@ for line in types_file
   Type.create!(code: code, name: name) if code and name
 end
 
-require 'add_products_from_csvs'
+require 'add_products_from_spreadsheet'
